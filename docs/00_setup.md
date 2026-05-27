@@ -56,7 +56,20 @@ cp .env.example .env
 `.env` を開いて以下を編集:
 
 - `AWS_PROFILE` = 手順2で使ったプロファイル名
-- `AWS_REGION` = Bedrockを利用するリージョン(例 `us-east-1`)
+- `AWS_REGION` = Bedrockを利用するリージョン(例 `us-east-1`、`ap-northeast-1`)
+- `BEDROCK_CHAT_MODEL_ID` = リージョン地域に応じてプレフィックスを変更
+
+### Nova Lite モデルIDとリージョンの対応
+
+Nova Lite はクロスリージョン推論プロファイル経由で呼び出すため、**呼び出し元のリージョンが属する地域に応じてプレフィックスを変える** 必要があります。
+
+| `AWS_REGION` 例 | `BEDROCK_CHAT_MODEL_ID` |
+|---|---|
+| `us-east-1`, `us-west-2`(US) | `us.amazon.nova-lite-v1:0` |
+| `ap-northeast-1`(東京), `ap-southeast-1` 等(APAC) | `apac.amazon.nova-lite-v1:0` |
+| `eu-central-1`, `eu-west-1` 等(EU) | `eu.amazon.nova-lite-v1:0` |
+
+> プレフィックスが合っていないと `ValidationException: The provided model identifier is invalid` が発生します。
 
 ## 5. 疎通確認
 
@@ -73,7 +86,8 @@ cp .env.example .env
 | `AccessDeniedException` | IAMで `bedrock:InvokeModel` が許可されていない、またはAnthropic製モデル利用時に使用フォーム未提出 |
 | `Could not connect to the endpoint URL` | `AWS_REGION` の設定誤り、またはリージョンでモデル未提供 |
 | `Unable to locate credentials` | ホストで `aws sso login` していない、または `AWS_PROFILE` 名が違う |
-| `ValidationException: ... on-demand throughput isn't supported` | `us.` 等のクロスリージョン推論プロファイル付きモデルIDを使う必要あり(本教材のデフォルトは `us.amazon.nova-lite-v1:0`) |
+| `ValidationException: ... on-demand throughput isn't supported` | クロスリージョン推論プロファイル付きモデルID(`us.` / `apac.` / `eu.` プレフィックス)を使う必要あり |
+| `ValidationException: The provided model identifier is invalid` | `BEDROCK_CHAT_MODEL_ID` のプレフィックスと `AWS_REGION` の地域が不一致(上の対応表を確認) |
 
 ---
 
