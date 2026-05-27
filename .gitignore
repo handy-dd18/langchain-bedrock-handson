@@ -1,0 +1,20 @@
+# env
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.python-version
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Chroma persistent dir
+.chroma/
+02_rag/.chroma/
+
+# OS / editor
+.DS_Store
+.vscode/
