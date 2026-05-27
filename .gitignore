@@ -14,6 +14,8 @@ __pycache__/
 # Chroma persistent dir
 .chroma/
 02_rag/.chroma/
+06_rag_advanced/.chroma_v2/
+06_rag_advanced/data/generated_sample.pdf
 
 # OS / editor
 .DS_Store
