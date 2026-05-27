@@ -68,7 +68,7 @@ LangChainの基本〜RAG〜AIエージェントまでを、**約90分**で一通
 | [06 RAG深掘り](06_rag_advanced/README.md) | MultiQuery / Ensemble / Rerank / 評価 | 90〜120分 |
 | [07 マルチエージェント](07_multi_agent/README.md) | Supervisor パターン | 60〜90分 |
 | [08 MCP連携](08_mcp/README.md) | langchain-mcp-adapters / stdio | 60〜90分 |
-| 09 総まとめ(準備中) | 学習リソース総覧 | 10分 |
+| [09 総まとめ](09_wrapup/README.md) | 学習リソース総覧 | 10分 |
 
 > 発展コースを始める前に [LangSmithセットアップガイド](docs/05_langsmith_setup.md) でAPIキーを設定しておくと、05章以降の全実行がトレース可視化されます(無料、必須ではありません)。
 
