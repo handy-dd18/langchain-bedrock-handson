@@ -45,9 +45,45 @@ LANGSMITH_PROJECT=langchain-bedrock-handson
 |---|---|
 | トレースがプロジェクトに現れない | `.env` を編集後に Notebookカーネルを再起動。`load_dotenv()` は1度しか効かないため、編集前のキャッシュが残る |
 | `LANGSMITH_API_KEY` がエラー | キー先頭が `lsv2_pt_` か確認。コピー時に余計な空白が入っていないか確認 |
-| EU でホスティングしたい | `.env` に `LANGSMITH_ENDPOINT=https://eu.api.smith.langchain.com` を追加 |
+| **`403 Forbidden`(キーは正しいのに送信できない)** | ワークスペースが **US 以外のリージョン**(EU / APAC)にある場合、対応するエンドポイントを `.env` で設定する必要があります(下記「リージョン別エンドポイント」参照) |
 | トレース送信を一時的に止めたい | `LANGSMITH_TRACING=false` にする(キーは残してOK) |
 | 無料枠を使い切るのが心配 | 個人での学習用途であれば、無料の Developer プランで十分(月数千トレースまで) |
+
+## リージョン別エンドポイント
+
+LangSmith は 2025〜2026 年にかけてマルチリージョン化されました。API キーは valid でも、デフォルト(US)のエンドポイントに送ると **`403 Forbidden`** が返ります。
+ワークスペースのリージョンに応じて `.env` に以下を追記してください。
+
+| リージョン | `LANGSMITH_ENDPOINT` の値 |
+|---|---|
+| US(デフォルト) | (設定不要) |
+| EU | `https://eu.api.smith.langchain.com` |
+| APAC | `https://apac.api.smith.langchain.com` |
+
+自分のワークスペースのリージョンは、LangSmith UI の左下ワークスペース名や Settings ページで確認できます。
+
+### 切り分け用 curl
+
+ターミナルで以下を実行し、書き込みが通るかを直接確認できます:
+
+```bash
+set -a; source .env; set +a
+
+# 読み取り(/info)で 200 が返るかどうか
+curl -s -o /dev/null -w "info: %{http_code}\n" \
+  "${LANGSMITH_ENDPOINT:-https://api.smith.langchain.com}/info" \
+  -H "X-API-Key: ${LANGSMITH_API_KEY}"
+
+# 書き込み(/runs)で 200/202 が返るかどうか
+curl -s -X POST \
+  -w "\nruns: %{http_code}\n" \
+  "${LANGSMITH_ENDPOINT:-https://api.smith.langchain.com}/runs" \
+  -H "X-API-Key: ${LANGSMITH_API_KEY}" \
+  -H "Content-Type: application/json" \
+  -d '{"name":"curl-test","run_type":"chain","inputs":{}}'
+```
+
+書き込みが 403 のままなら、`LANGSMITH_ENDPOINT` のリージョン違いを最初に疑ってください。
 
 ---
 
