@@ -4,19 +4,30 @@
 - DevContainer が起動でき、Notebookが実行可能
 - AWS Bedrock に Notebook から接続できる
 
-## 1. AWS Bedrock モデルアクセスを有効化
+## 1. Bedrock モデルへのアクセス可否を確認
 
-AWSコンソールで以下のモデルへのアクセスを **事前に申請** してください(リージョン: 例 `us-east-1`)。
+> 📣 **2025年9月29日以降、Amazon Bedrock のサーバーレス基盤モデルは AWS アカウントに対して自動的に有効化** されるようになりました。
+> 以前必要だった「Model access」画面でのリクエスト操作は廃止されており、原則 **追加のアクセス申請なしに利用できます**。
+>
+> 参考: [Simplified model access in Amazon Bedrock (AWS Security Blog)](https://aws.amazon.com/blogs/security/simplified-amazon-bedrock-model-access/)
 
-- `Amazon Nova Lite`(チャット用)
-- `Amazon Titan Text Embeddings V2`(埋め込み用)
+本ハンズオンのデフォルトモデルは以下で、いずれもサーバーレスで自動アクセス可能なため申請は不要です:
 
-手順:
-1. AWSコンソール → Amazon Bedrock → 左メニュー「Model access」
-2. 「Modify model access」から上記モデルを選択し、リクエスト
-3. ステータスが「Access granted」になっていることを確認
+- `Amazon Nova Lite`(チャット用) — 申請不要
+- `Amazon Titan Text Embeddings V2`(埋め込み用) — 申請不要
 
-> Amazon純正モデルは通常すぐに承認されます。
+### Anthropic製モデルを使う場合(オプション)
+
+第3章でフォールバックとして紹介している `Claude 3 Haiku` など **Anthropic 製モデルだけは例外** で、自動有効化された状態でも **初回利用時に一度だけ「使用フォーム」(use case details の提出)が必要** です。
+
+手順(必要な場合のみ):
+1. AWSコンソール → Amazon Bedrock → 左メニュー「Model catalog」または該当モデルのページ
+2. Anthropic 製モデルを選び、初回はユースケースを記載するフォームを送信
+3. 数分程度で利用可能になります
+
+### アクセス制御
+
+組織で IAM ポリシーや SCP によりモデル利用が制限されている場合は、`bedrock:InvokeModel` 等の権限が自分のロールに付与されているか管理者に確認してください。
 
 ## 2. ホスト(WSL)で AWS にログイン
 
@@ -45,7 +56,7 @@ cp .env.example .env
 `.env` を開いて以下を編集:
 
 - `AWS_PROFILE` = 手順2で使ったプロファイル名
-- `AWS_REGION` = モデルアクセスを有効化したリージョン(例 `us-east-1`)
+- `AWS_REGION` = Bedrockを利用するリージョン(例 `us-east-1`)
 
 ## 5. 疎通確認
 
@@ -59,7 +70,7 @@ cp .env.example .env
 
 | 症状 | 原因 / 対処 |
 |---|---|
-| `AccessDeniedException` | モデルアクセスが未承認。手順1を再確認 |
+| `AccessDeniedException` | IAMで `bedrock:InvokeModel` が許可されていない、またはAnthropic製モデル利用時に使用フォーム未提出 |
 | `Could not connect to the endpoint URL` | `AWS_REGION` の設定誤り、またはリージョンでモデル未提供 |
 | `Unable to locate credentials` | ホストで `aws sso login` していない、または `AWS_PROFILE` 名が違う |
 | `ValidationException: ... on-demand throughput isn't supported` | `us.` 等のクロスリージョン推論プロファイル付きモデルIDを使う必要あり(本教材のデフォルトは `us.amazon.nova-lite-v1:0`) |

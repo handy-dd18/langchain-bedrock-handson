@@ -30,13 +30,13 @@ LangChainの基本〜RAG〜AIエージェントまでを、**約90分**で一通
 ### AWS 側の前提
 
 - AWS Bedrock が利用可能なAWSアカウントを持っていること
-- 以下のモデルへの **モデルアクセス申請が承認済み** であること(リージョン例: `us-east-1`)
-  - `Amazon Nova Lite`(チャット)
-  - `Amazon Titan Text Embeddings V2`(埋め込み)
+- 本ハンズオンで使用する **Amazon Nova Lite / Titan Text Embeddings V2** は、2025年9月29日以降のBedrock仕様変更により **モデルアクセス申請なしで自動的に利用可能** です(詳細は [docs/00_setup.md](docs/00_setup.md) 参照)
+- Bedrockを利用するリージョンが決まっていること(例: `us-east-1`)
 - ホスト側で `aws` CLI v2 がインストール済みで、SSO等によるログインが行える状態
   - 例: `aws sso login --profile <your-profile>` が成功すること
   - `~/.aws/config` にプロファイル設定があること
   - 本教材では `~/.aws/` ディレクトリをDevContainerにマウントして認証情報を共有します
+- IAMロールに `bedrock:InvokeModel` 権限が付与されていること
 
 ### 主要ライブラリ(`requirements.txt` で自動インストール)
 
@@ -80,4 +80,4 @@ cp .env.example .env
 - **チャット**: `us.amazon.nova-lite-v1:0`(Amazon Nova Lite、安価)
 - **埋め込み**: `amazon.titan-embed-text-v2:0`
 
-モデルアクセスの有効化は [docs/00_setup.md](docs/00_setup.md) を参照してください。
+いずれも申請不要で自動アクセス可能です。詳細は [docs/00_setup.md](docs/00_setup.md) を参照してください。
