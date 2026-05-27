@@ -53,10 +53,10 @@ LangChainの基本〜RAG〜AIエージェントまでを、**約90分**で一通
 | 章 | 内容 | 所要時間 |
 |---|---|---|
 | [00 セットアップ](docs/00_setup.md) | DevContainer起動 + Bedrock疎通 | 15分 |
-| [01 LangChain基礎](01_basics/) | Chat Model / Prompt / LCEL | 20分 |
-| [02 RAG最小構成](02_rag/) | 文書 → 埋め込み → 検索 → 生成 | 30分 |
-| [03 AIエージェント](03_agent/) | Tool定義 → Agent実行 | 20分 |
-| [04 まとめ](04_wrapup/) | 次の一歩 | 5分 |
+| [01 LangChain基礎](01_basics/README.md) | Chat Model / Prompt / LCEL | 20分 |
+| [02 RAG最小構成](02_rag/README.md) | 文書 → 埋め込み → 検索 → 生成 | 30分 |
+| [03 AIエージェント](03_agent/README.md) | Tool定義 → Agent実行 | 20分 |
+| [04 まとめ](04_wrapup/README.md) | 次の一歩 | 5分 |
 
 ## クイックスタート
 
