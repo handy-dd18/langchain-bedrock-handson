@@ -8,3 +8,8 @@ python-dotenv>=1.0
 boto3>=1.34
 ipykernel>=6.29
 jupyter>=1.0
+
+# 05章 LangGraph + LangSmith
+langgraph>=0.2
+langsmith>=0.1
+grandalf>=0.8  # graph.get_graph().print_ascii() 用 (任意)

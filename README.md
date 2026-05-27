@@ -50,13 +50,27 @@ LangChainの基本〜RAG〜AIエージェントまでを、**約90分**で一通
 
 ## 構成
 
+### 速習コース(約90分)
+
 | 章 | 内容 | 所要時間 |
 |---|---|---|
 | [00 セットアップ](docs/00_setup.md) | DevContainer起動 + Bedrock疎通 | 15分 |
 | [01 LangChain基礎](01_basics/README.md) | Chat Model / Prompt / LCEL | 20分 |
 | [02 RAG最小構成](02_rag/README.md) | 文書 → 埋め込み → 検索 → 生成 | 30分 |
 | [03 AIエージェント](03_agent/README.md) | Tool定義 → Agent実行 | 20分 |
-| [04 まとめ](04_wrapup/README.md) | 次の一歩 | 5分 |
+| [04 中間まとめ](04_wrapup/README.md) | ここまでの振り返り | 5分 |
+
+### 発展コース(各章 60〜120分、章ごとに分割受講可)
+
+| 章 | 内容 | 所要時間 |
+|---|---|---|
+| [05 LangGraph + LangSmith](05_langgraph/README.md) | StateGraph / create_react_agent / トレース可視化 / MemorySaver | 90〜120分 |
+| 06 RAG深掘り(準備中) | MultiQuery / Ensemble / Rerank / 評価 | 90〜120分 |
+| 07 マルチエージェント(準備中) | Supervisor パターン | 60〜90分 |
+| 08 MCP 連携(準備中) | langchain-mcp-adapters / stdio | 60〜90分 |
+| 09 総まとめ(準備中) | 学習リソース総覧 | 10分 |
+
+> 発展コースを始める前に [LangSmithセットアップガイド](docs/05_langsmith_setup.md) でAPIキーを設定しておくと、05章以降の全実行がトレース可視化されます(無料、必須ではありません)。
 
 ## クイックスタート
 
