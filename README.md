@@ -66,7 +66,7 @@ LangChainの基本〜RAG〜AIエージェントまでを、**約90分**で一通
 |---|---|---|
 | [05 LangGraph + LangSmith](05_langgraph/README.md) | StateGraph / create_react_agent / トレース可視化 / MemorySaver | 90〜120分 |
 | [06 RAG深掘り](06_rag_advanced/README.md) | MultiQuery / Ensemble / Rerank / 評価 | 90〜120分 |
-| 07 マルチエージェント(準備中) | Supervisor パターン | 60〜90分 |
+| [07 マルチエージェント](07_multi_agent/README.md) | Supervisor パターン | 60〜90分 |
 | 08 MCP 連携(準備中) | langchain-mcp-adapters / stdio | 60〜90分 |
 | 09 総まとめ(準備中) | 学習リソース総覧 | 10分 |
 
