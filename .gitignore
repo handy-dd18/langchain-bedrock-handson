@@ -16,6 +16,7 @@ __pycache__/
 02_rag/.chroma/
 06_rag_advanced/.chroma_v2/
 06_rag_advanced/data/generated_sample.pdf
+sandbox/.chroma_sandbox/
 
 # OS / editor
 .DS_Store
