@@ -72,6 +72,15 @@ LangChainの基本〜RAG〜AIエージェントまでを、**約90分**で一通
 
 > 発展コースを始める前に [LangSmithセットアップガイド](docs/05_langsmith_setup.md) でAPIキーを設定しておくと、05章以降の全実行がトレース可視化されます(無料、必須ではありません)。
 
+### sandbox(自由実験スペース)
+
+| ディレクトリ | 内容 |
+|---|---|
+| [sandbox/](sandbox/README.md) | 学んだ内容を使って自由にコードを試す場所 |
+
+各章を一通りやった後、または途中で「ちょっと試したい」ときに使ってください。
+[sandbox/sandbox.ipynb](sandbox/sandbox.ipynb) には **環境変数の読み込みセル(必須)** と、機能別の **import 一覧**(基本のLLMのみ有効、RAG/Agent/LangGraph/MCP/評価はコメントアウト済み — 使う行の `#` を外すだけ)が用意してあります。RAG用の `data/` とMCP用の `mcp_servers/` も同梱しています。
+
 ## クイックスタート
 
 ```bash
