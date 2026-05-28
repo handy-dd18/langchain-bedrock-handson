@@ -27,3 +27,7 @@ langgraph-supervisor>=0.0.5
 # 0.2.0 以降は langchain-core 1.x の content blocks を要求し、本教材の langchain 0.3 系と非互換のため上限を固定
 langchain-mcp-adapters>=0.1,<0.2
 mcp>=1.0
+
+# 開発補助: Notebook の実行結果(outputs)を git にコミットしないようにする
+# (postCreate で nbstripout --install を実行し、git の clean filter として登録する)
+nbstripout>=0.7
