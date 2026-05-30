@@ -25,7 +25,7 @@
 1. **MCP とは** - Anthropic 発の標準。Server / Client / Transport の関係
 2. **自作 MCP サーバ** - `mcp_servers/math_server.py` の中身確認
 3. **MultiServerMCPClient で接続** - stdio 経由で math サーバを起動 → ツール取得
-4. **LangGraph に統合** - `create_react_agent` に MCP ツールを渡す
+4. **LangGraph に統合** - `create_agent` に MCP ツールを渡す
 5. **公式 filesystem MCP** - `@modelcontextprotocol/server-filesystem` を `npx` 経由で起動
 6. **複数サーバ同時利用** - math と filesystem 両方のツールをエージェントが使い分ける
 

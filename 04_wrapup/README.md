@@ -9,7 +9,7 @@
 |---|---|
 | 01 基礎 | `ChatBedrockConverse` で LLM を呼び、LCEL (`prompt | llm | parser`) でチェーンを組む |
 | 02 RAG | Loader → Splitter → Embeddings → VectorStore → Retriever → Chain の流れ |
-| 03 Agent | `@tool` で関数をツール化、`create_tool_calling_agent` + `AgentExecutor` でループ実行 |
+| 03 Agent | `@tool` で関数をツール化、`create_agent`(langchain 1.x 標準)でループ実行 |
 
 ## ここまでで作れるもの
 

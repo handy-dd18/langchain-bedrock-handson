@@ -42,9 +42,9 @@ LangChainの基本〜RAG〜AIエージェントまでを、**約90分**で一通
 
 | ライブラリ | バージョン目安 |
 |---|---|
-| langchain | >=0.3, <0.4 |
-| langchain-aws | >=0.2 |
-| langchain-chroma | >=0.1 |
+| langchain | >=1.3, <2 |
+| langchain-aws | >=1.5, <2 |
+| langchain-chroma | >=1.1, <2 |
 | chromadb | >=0.5 |
 | boto3 | >=1.34 |
 
@@ -64,7 +64,7 @@ LangChainの基本〜RAG〜AIエージェントまでを、**約90分**で一通
 
 | 章 | 内容 | 所要時間 |
 |---|---|---|
-| [05 LangGraph + LangSmith](05_langgraph/README.md) | StateGraph / create_react_agent / トレース可視化 / MemorySaver | 90〜120分 |
+| [05 LangGraph + LangSmith](05_langgraph/README.md) | StateGraph / create_agent / トレース可視化 / InMemorySaver | 90〜120分 |
 | [06 RAG深掘り](06_rag_advanced/README.md) | MultiQuery / Ensemble / Rerank / 評価 | 90〜120分 |
 | [07 マルチエージェント](07_multi_agent/README.md) | Supervisor パターン | 60〜90分 |
 | [08 MCP連携](08_mcp/README.md) | langchain-mcp-adapters / stdio | 60〜90分 |

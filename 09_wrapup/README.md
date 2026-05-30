@@ -10,8 +10,8 @@
 |---|---|---|
 | 01 基礎 | `ChatBedrockConverse` / LCEL | Bedrock 経由で LLM を呼び、宣言的にチェーンを組む |
 | 02 RAG最小構成 | Loader / Splitter / Chroma / Retriever | 文書を埋め込んで検索し、回答に活用する基本フロー |
-| 03 AIエージェント | `@tool` / `AgentExecutor` | LLM 自身がツールを選択し連続実行する |
-| 05 LangGraph + LangSmith | `StateGraph` / `MemorySaver` / トレース | 状態を持つエージェントと観測 |
+| 03 AIエージェント | `@tool` / `create_agent` | LLM 自身がツールを選択し連続実行する |
+| 05 LangGraph + LangSmith | `StateGraph` / `InMemorySaver` / トレース | 状態を持つエージェントと観測 |
 | 06 RAG深掘り | MultiQuery / Ensemble / Rerank / `evaluate` | 検索精度を上げ、客観的に評価する |
 | 07 マルチエージェント | `create_supervisor` / hand-off | 役割分担した複数 Agent の協調 |
 | 08 MCP連携 | `MultiServerMCPClient` / FastMCP | 外部ツールサーバの取り込み |
@@ -79,7 +79,7 @@
 
 ## おわりに
 
-LangChain は v0.3 系で **LCEL + LangGraph** という設計が定着しました。
+LangChain は v1 系で **LCEL + LangGraph**(`create_agent` などの標準エージェントも LangGraph ベース)という設計が定着しました。
 この延長線上で、観測(LangSmith)・評価(evaluate)・相互運用(MCP)・マルチエージェントといった広がりを 1 通り掴んでいれば、ほとんどの LLM アプリは設計図が描けるはずです。
 
 あとは作りたいものを作るだけです。よい開発を!

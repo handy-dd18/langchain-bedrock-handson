@@ -55,8 +55,8 @@ sandbox/
 | LLMを呼ぶ / LCELチェーン | 01 | `ChatBedrockConverse`, `ChatPromptTemplate`, `StrOutputParser` |
 | RAG | 02・06 | `TextLoader`, `RecursiveCharacterTextSplitter`, `Chroma`, `as_retriever` |
 | 検索精度向上 | 06 | `MultiQueryRetriever`, `EnsembleRetriever`, `BedrockRerank` |
-| エージェント | 03・05 | `@tool`, `create_react_agent` |
-| 状態を持つグラフ | 05 | `StateGraph`, `MessagesState`, `ToolNode`, `MemorySaver` |
+| エージェント | 03・05 | `@tool`, `create_agent` |
+| 状態を持つグラフ | 05 | `StateGraph`, `MessagesState`, `ToolNode`, `InMemorySaver` |
 | マルチエージェント | 07 | `create_supervisor` |
 | MCP連携 | 08 | `MultiServerMCPClient` |
 | 評価 | 06 | `langsmith` の `evaluate` |

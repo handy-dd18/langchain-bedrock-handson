@@ -18,7 +18,7 @@
 ### 含まれる内容
 
 1. **マルチエージェントの動機** - 単独エージェントとの違い、Supervisor / Swarm の比較
-2. **Researcher エージェント** - 06章の Retriever をツール化、`create_react_agent` で構築
+2. **Researcher エージェント** - 06章の Retriever をツール化、`create_agent` で構築
 3. **Writer エージェント** - ツールなし、集めた情報を文章にまとめる
 4. **Supervisor 構築** - `create_supervisor` で 2 エージェントをオーケストレーション
 5. **実行** - `.invoke()` と `.stream()` で動作観察
