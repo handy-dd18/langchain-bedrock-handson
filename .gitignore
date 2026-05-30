@@ -16,8 +16,18 @@ __pycache__/
 02_rag/.chroma/
 06_rag_advanced/.chroma_v2/
 06_rag_advanced/data/generated_sample.pdf
-sandbox/.chroma_sandbox/
 
 # OS / editor
 .DS_Store
 .vscode/
+
+# sandbox: 雛形ファイルのみ git 管理、ユーザー追加分は管理外
+sandbox/*
+!sandbox/README.md
+!sandbox/sandbox.ipynb.example
+!sandbox/data
+!sandbox/mcp_servers
+sandbox/data/*
+!sandbox/data/sample_knowledge.md
+sandbox/mcp_servers/*
+!sandbox/mcp_servers/example_server.py

@@ -79,7 +79,14 @@ LangChainの基本〜RAG〜AIエージェントまでを、**約90分**で一通
 | [sandbox/](sandbox/README.md) | 学んだ内容を使って自由にコードを試す場所 |
 
 各章を一通りやった後、または途中で「ちょっと試したい」ときに使ってください。
-[sandbox/sandbox.ipynb](sandbox/sandbox.ipynb) には **環境変数の読み込みセル(必須)** と、機能別の **import 一覧**(基本のLLMのみ有効、RAG/Agent/LangGraph/MCP/評価はコメントアウト済み — 使う行の `#` を外すだけ)が用意してあります。RAG用の `data/` とMCP用の `mcp_servers/` も同梱しています。
+
+初回のみ、雛形 `sandbox.ipynb.example` を `sandbox.ipynb` という名前にコピーしてから使います:
+
+```bash
+cp sandbox/sandbox.ipynb.example sandbox/sandbox.ipynb
+```
+
+`sandbox.ipynb` および `sandbox/` 配下に追加したファイル(自前の文書・MCPサーバなど)は **`.gitignore` 対象** なので、自由に編集・追加しても git に上がりません。雛形には **環境変数の読み込みセル(必須)** と、機能別の **import 一覧**(基本のLLMのみ有効、RAG/Agent/LangGraph/MCP/評価はコメントアウト済み — 使う行の `#` を外すだけ)が用意してあります。
 
 ## クイックスタート
 

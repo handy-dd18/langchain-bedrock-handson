@@ -2,25 +2,34 @@
  "cells": [
   {
    "cell_type": "markdown",
-   "id": "0",
+   "id": "sbx-intro",
    "metadata": {},
    "source": [
-    "# 🛝 sandbox — 自由実験ノート\n",
+    "# 🛝 sandbox — 自由実験ノート(雛形)\n",
+    "\n",
+    "> ⚠️ **このファイルは雛形です。直接編集せず、まず複製してから使ってください。**\n",
+    ">\n",
+    "> ターミナルで以下を実行:\n",
+    "> ```bash\n",
+    "> cp sandbox/sandbox.ipynb.example sandbox/sandbox.ipynb\n",
+    "> ```\n",
+    "> 複製後の `sandbox.ipynb` は `.gitignore` 対象なので、自由に編集・実行・保存して構いません(git に上がりません)。\n",
     "\n",
     "ハンズオン(01〜08章)で学んだ内容を使って、自由にコードを試す場所です。\n",
     "\n",
     "## 進め方\n",
-    "1. 下の **環境変数セル**(必須)を実行\n",
-    "2. **import 一覧セル** で、使いたい機能の `#` を外す\n",
-    "3. **LLM 初期化セル** を実行\n",
-    "4. その下の空セルで自由に実験\n",
+    "1. 上記のコマンドで `sandbox.ipynb` を作成し、そちらを開く\n",
+    "2. 先頭の **環境変数セル**(必須)を実行 → Bedrock / LangSmith の設定が読まれる\n",
+    "3. **import 一覧セル** で、使いたい機能のコメント(`#`)を外す\n",
+    "4. **LLM 初期化セル** を実行\n",
+    "5. その下の空セルで自由に実験\n",
     "\n",
-    "出力は nbstripout で git にコミットされないので、気にせず実行・保存してOKです。"
+    "> 出力は nbstripout で git にコミットされないので、気にせず実行・保存してOKです(複製した sandbox.ipynb は .gitignore で除外されているので二重に安全です)。"
    ]
   },
   {
    "cell_type": "markdown",
-   "id": "1",
+   "id": "sbx-env-doc",
    "metadata": {},
    "source": [
     "## 0. 環境変数の読み込み(必須)\n",
@@ -31,7 +40,7 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "id": "2",
+   "id": "sbx-env",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -54,7 +63,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "3",
+   "id": "sbx-imports-doc",
    "metadata": {},
    "source": [
     "## 1. import 一覧\n",
@@ -66,7 +75,7 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "id": "4",
+   "id": "sbx-imports",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -123,7 +132,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "5",
+   "id": "sbx-init-doc",
    "metadata": {},
    "source": [
     "## 2. LLM / Embedding の初期化\n",
@@ -134,7 +143,7 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "id": "6",
+   "id": "sbx-init",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -149,7 +158,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "7",
+   "id": "sbx-playground",
    "metadata": {},
    "source": [
     "## 3. 自由実験スペース\n",
@@ -167,7 +176,7 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "id": "8",
+   "id": "sbx-cell-1",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -179,7 +188,7 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "id": "9",
+   "id": "sbx-cell-2",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -189,7 +198,7 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "id": "10",
+   "id": "sbx-cell-3",
    "metadata": {},
    "outputs": [],
    "source": []
@@ -202,8 +211,16 @@
    "name": "python3"
   },
   "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
    "name": "python",
-   "version": "3.11"
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.11.15"
   }
  },
  "nbformat": 4,
